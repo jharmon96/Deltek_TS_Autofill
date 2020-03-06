@@ -1,7 +1,8 @@
 import settings
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.chrome.options import Options
+#from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -13,19 +14,23 @@ home = str(Path.home())
 # starts google chrome in either headless (export) or standard (import) mode.
 
 def initialize_browser():
-    chromeOptions = webdriver.ChromeOptions()
+    options = Options()
+    profile = webdriver.FirefoxProfile()
+#    options.headless = True
+    settings.driver = webdriver.Firefox(options=options, executable_path=r'/usr/bin/geckodriver', firefox_profile=profile)
+    #chromeOptions = webdriver.ChromeOptions()
     #prefs = {"download.default_directory": settings.source_path + r"\unanet_AQC_imu\reference_files"}
     #chromeOptions.add_experimental_option("prefs", prefs)
-    chromeOptions.add_argument("--headless")
-    chromeOptions.add_argument("--disable-dev-shm-usage")
-    chromeOptions.add_argument("--disable-extensions")
-    chromeOptions.add_argument("no-sandbox")
+    #chromeOptions.add_argument("--headless")
+    #chromeOptions.add_argument("--disable-dev-shm-usage")
+    #chromeOptions.add_argument("--disable-extensions")
+    #chromeOptions.add_argument("no-sandbox")
     # caps = DesiredCapabilities().CHROME
     # caps["pageLoadStrategy"] = "normal"  #  complete
     # caps["pageLoadStrategy"] = "none"  # interactive
-    chromeDriver = settings.chromeDriver
-    settings.driver = webdriver.Chrome(executable_path=r'/usr/bin/chromedriver',
-                                       chrome_options=chromeOptions)
+    #chromeDriver = settings.chromeDriver
+    #settings.driver = webdriver.Chrome(executable_path=r'/usr/bin/chromedriver',
+    #                                   chrome_options=chromeOptions)
    # settings.driver = webdriver.Chrome(desired_capabilities=caps, executable_path=chromeDriver,
    #                                    chrome_options=chromeOptions)
 

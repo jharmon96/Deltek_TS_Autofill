@@ -1,0 +1,24 @@
+
+To download this package:
+
+1. Open up a bash shell
+2. Enter the following commands:
+2.1    git clone https://github.com/jharmon96/Deltek_TS_Autofill.git
+2.2    cd ./Deltek_TS_Autofill
+2.3    python3 setup.py install
+3. Read the crontab.txt file and copy the contents
+4. Type 'crontab -e' into bash
+5. **First time cron users** Select the number corresponding to the 
+       easy option (for editing)if prompted. 
+6. Delete the contents of the file and paste in the contents of crontab.txt
+7. Save and close the file.
+8. Install Firefox driver by typing the following commands:
+8.1    wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+8.2    tar xzf geckodriver-v0.26.0-linux64.tar.gz
+8.3    sudo mv geckodriver /usr/bin/geckodriver
+9. Go to the settings.py file and edit. Update the URL, domain, username, and password
+       used to login to your Deltek site. Save and close.
+10. Enter the following command:
+10.1   sudo apt-get update
+
+It is necessary to have installed Firefox, Cron, and Python 3.6 or above for this to work. 

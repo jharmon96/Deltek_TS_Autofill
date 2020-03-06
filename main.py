@@ -6,7 +6,7 @@ from selenium import webdriver
 import time, datetime
 from pyvirtualdisplay import Display
 
-display = Display(visible=0, size=(800, 600))
+display = Display(visible=0, use_xauth=True, size=(800, 600))
 display.start()
 
 login.initialize_browser()
