@@ -16,15 +16,18 @@ def initialize_browser():
     chromeOptions = webdriver.ChromeOptions()
     #prefs = {"download.default_directory": settings.source_path + r"\unanet_AQC_imu\reference_files"}
     #chromeOptions.add_experimental_option("prefs", prefs)
-    # chromeOptions.add_argument("--headless")
-    caps = DesiredCapabilities().CHROME
+    chromeOptions.add_argument("--headless")
+    chromeOptions.add_argument("--disable-dev-shm-usage")
+    chromeOptions.add_argument("--disable-extensions")
+    chromeOptions.add_argument("no-sandbox")
+    # caps = DesiredCapabilities().CHROME
     # caps["pageLoadStrategy"] = "normal"  #  complete
-    caps["pageLoadStrategy"] = "none"  # interactive
+    # caps["pageLoadStrategy"] = "none"  # interactive
     chromeDriver = settings.chromeDriver
-    settings.driver = webdriver.Chrome(desired_capabilities=caps, executable_path=chromeDriver,
+    settings.driver = webdriver.Chrome(executable_path=chromeDriver,
                                        chrome_options=chromeOptions)
-    settings.driver = webdriver.Chrome(desired_capabilities=caps, executable_path=chromeDriver,
-                                       chrome_options=chromeOptions)
+   # settings.driver = webdriver.Chrome(desired_capabilities=caps, executable_path=chromeDriver,
+   #                                    chrome_options=chromeOptions)
 
 
 
