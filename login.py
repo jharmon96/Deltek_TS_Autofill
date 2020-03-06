@@ -24,7 +24,7 @@ def initialize_browser():
     # caps["pageLoadStrategy"] = "normal"  #  complete
     # caps["pageLoadStrategy"] = "none"  # interactive
     chromeDriver = settings.chromeDriver
-    settings.driver = webdriver.Chrome(executable_path=chromeDriver,
+    settings.driver = webdriver.Chrome(executable_path=r'/usr/bin/chromedriver',
                                        chrome_options=chromeOptions)
    # settings.driver = webdriver.Chrome(desired_capabilities=caps, executable_path=chromeDriver,
    #                                    chrome_options=chromeOptions)

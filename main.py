@@ -4,6 +4,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 import time, datetime
+from pyvirtualdisplay import Display
+
+display = Display(visible=0, size=(800, 600))
+display.start()
 
 login.initialize_browser()
 login.login()
@@ -56,3 +60,5 @@ settings.driver.find_element_by_xpath(xpath).click()
 
 time.sleep(3)
 settings.driver.quit()
+
+display.stop()
