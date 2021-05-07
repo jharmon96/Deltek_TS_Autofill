@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: Deltek-TS-Autofill
+Version: 1.0
+Summary: Combined with a linux server and cron schedueler, this package automatically fills out 8 hours M-F at 5pm to the first row of your TS.
+Home-page: UNKNOWN
+Author: Jack Harmon
+Author-email: foo
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN

@@ -1,0 +1,12 @@
+README
+crontab.txt
+setup.py
+Deltek_TS_Autofill/__init__.py
+Deltek_TS_Autofill/login.py
+Deltek_TS_Autofill/main.py
+Deltek_TS_Autofill/settings.py
+Deltek_TS_Autofill.egg-info/PKG-INFO
+Deltek_TS_Autofill.egg-info/SOURCES.txt
+Deltek_TS_Autofill.egg-info/dependency_links.txt
+Deltek_TS_Autofill.egg-info/requires.txt
+Deltek_TS_Autofill.egg-info/top_level.txt

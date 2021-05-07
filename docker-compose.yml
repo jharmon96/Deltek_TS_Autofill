@@ -1,0 +1,40 @@
+####################################################
+############### DELTEK AUTOFILLER #################
+####################################################
+# Fields
+####################################################
+### restart    = [always] Run container on login
+### TZ         = Time Zone
+### FILL HOURS = How many hours to enter
+### RUN_NOW    = Set to True to run immediately
+### RUN_DAYS   = Days of the week to run
+### RUN_HOUR   = Hour of day to run [0-23]
+### RUN_MINUTE = Minute of the day to run [0-59]
+####################################################
+# Instructions
+####################################################
+### Install Docker
+### In terminal, navigate to folder with this file
+### Type 'docker-compose up -d'
+####################################################
+
+version: '3.7'
+
+services:
+  deltek-autofill:
+    image: jackharmon/deltekautofill:latest
+    shm_size: '2gb'
+    build: .
+    restart: always
+    environment:
+      - URL=https://te1842new.neosystems.net/DeltekTC/welcome.msv
+      - DOMAIN=TEPROD
+      - USERNAME=jharmon002
+      - PASSWORD=
+      - TZ=America/New_York
+      - FILL_HOURS=8
+      - RUN_NOW=False
+      - RUN_DAYS=mon,tue,wed,thu,fri
+      - RUN_HOUR=17
+      - RUN_MINUTE=0
+    command: /src/build.sh
